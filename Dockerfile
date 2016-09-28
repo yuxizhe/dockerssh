@@ -14,8 +14,6 @@ RUN sed -ri 's/UsePAM yes/#UsePAM yes/g' /etc/ssh/sshd_config
 EXPOSE 22 
 EXPOSE 8080
 
-CMD    ["/usr/sbin/sshd", "-D"]
-
 RUN apt-get install -y git
 
 RUN apt-get install -y curl
@@ -29,7 +27,7 @@ RUN git clone https://github.com/yuxizhe/heroku.git
 
 WORKDIR /heroku
 
+RUN npm install 
 
-RUN git checkout firebase
+CMD    ["../usr/sbin/sshd", "-D"] && pm2 start index.js
 
-RUN pm2 start index.js
