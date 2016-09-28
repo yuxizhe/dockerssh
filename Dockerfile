@@ -1,5 +1,5 @@
 FROM       ubuntu:14.04
-MAINTAINER Aleksandar Diklic "https://github.com/rastasheep"
+
 
 RUN apt-get update
 
@@ -14,3 +14,19 @@ RUN sed -ri 's/UsePAM yes/#UsePAM yes/g' /etc/ssh/sshd_config
 EXPOSE 22
 
 CMD    ["/usr/sbin/sshd", "-D"]
+
+RUN apt-get install git
+
+RUN  wget -qO- https://raw.githubusercontent.com/creationix/nvm/v0.32.0/install.sh | bash
+
+RUN install node
+
+RUN nvm use node
+
+RUN npm install pm2 -g
+
+RUN git clone https://github.com/yuxizhe/heroku.git
+
+RUN cd heroku/
+
+RUN pm2 start index.js
