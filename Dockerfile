@@ -33,5 +33,5 @@ RUN git checkout firebase
 
 RUN npm install 
 
-CMD    ["npm", "start", "/heroku/index.js"]
+ENTRYPOINT    pm2 start /heroku/index.js && /usr/sbin/sshd -D 
 
