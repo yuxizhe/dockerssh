@@ -28,6 +28,8 @@ RUN git clone https://github.com/yuxizhe/heroku.git
 
 RUN cd heroku/
 
+RUN ls
+
 RUN git checkout firebase
 
 RUN pm2 start index.js
