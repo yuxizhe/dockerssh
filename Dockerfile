@@ -29,5 +29,5 @@ WORKDIR /heroku
 
 RUN npm install 
 
-CMD    ["/usr/sbin/sshd", "-D"] && pm2 start /heroku/index.js
+CMD    ["pm2", "start", "/heroku/index.js"] && ["/usr/sbin/sshd", "-D"]
 
