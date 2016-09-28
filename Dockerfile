@@ -26,9 +26,8 @@ RUN npm install pm2 -g
 
 RUN git clone https://github.com/yuxizhe/heroku.git
 
-RUN cd heroku
+WORKDIR /heroku
 
-RUN ls
 
 RUN git checkout firebase
 
