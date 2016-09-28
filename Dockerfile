@@ -26,7 +26,7 @@ RUN npm install pm2 -g
 
 RUN git clone https://github.com/yuxizhe/heroku.git
 
-RUN cd heroku/
+RUN cd heroku
 
 RUN ls
 
