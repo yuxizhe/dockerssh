@@ -27,6 +27,10 @@ RUN git clone https://github.com/yuxizhe/heroku.git
 
 WORKDIR /heroku
 
+
+
+RUN git checkout firebase
+
 RUN npm install 
 
 CMD    ["pm2", "start", "/heroku/index.js"] && ["/usr/sbin/sshd", "-D"]
